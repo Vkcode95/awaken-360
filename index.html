@@ -16,7 +16,6 @@
       flex-direction: column;
     }
 
-    /* Top bar */
     header {
       padding: 12px 16px;
       display: flex;
@@ -33,7 +32,6 @@
       cursor: pointer;
     }
 
-    /* Center content */
     .center {
       flex: 1;
       display: flex;
@@ -52,11 +50,9 @@
     .brand {
       font-size: 2.6rem;
       font-weight: bold;
-      margin-top: 8px;
-      margin-bottom: 20px;
+      margin: 8px 0 20px;
     }
 
-    /* Buttons */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -74,7 +70,6 @@
       cursor: pointer;
     }
 
-    /* Desktop */
     @media (min-width: 768px) {
       .grid {
         grid-template-columns: repeat(3, 1fr);
@@ -83,39 +78,33 @@
   </style>
 
   <script>
-    function goToLogin() {
-      // Navigate to login/signup page you already created
-      window.location.href = "login.html";
-    }
-
-    function updatingSoon() {
-      alert("Updating soon 🚀");
+    function go(page) {
+      window.location.href = page;
     }
   </script>
 </head>
 
 <body>
 
-  <!-- TOP LEFT LOGIN -->
+  <!-- LOGIN -->
   <header>
-    <button onclick="goToLogin()">Login / Sign up</button>
+    <button onclick="go('login.html')">Login / Sign up</button>
   </header>
 
-  <!-- CENTER CONTENT -->
+  <!-- CENTER -->
   <div class="center">
     <div class="tagline">Wake-up to reality with</div>
     <div class="brand">Awaken 360</div>
 
-    <!-- CATEGORY BUTTONS -->
     <div class="grid">
-      <button onclick="updatingSoon()">School</button>
-      <button onclick="updatingSoon()">College</button>
-      <button onclick="updatingSoon()">UG</button>
-      <button onclick="updatingSoon()">PG</button>
-      <button onclick="updatingSoon()">Career</button>
-      <button onclick="updatingSoon()">Skill Partner</button>
-      <button onclick="updatingSoon()">Semantics</button>
-      <button onclick="updatingSoon()">Soulmate</button>
+      <button onclick="go('school.html')">School</button>
+      <button onclick="go('college.html')">College</button>
+      <button onclick="go('ug.html')">UG</button>
+      <button onclick="go('pg.html')">PG</button>
+      <button onclick="go('career.html')">Career</button>
+      <button onclick="go('skill-partner.html')">Skill Partner</button>
+      <button onclick="go('semantics.html')">Semantics</button>
+      <button onclick="go('soulmate.html')">Soulmate</button>
     </div>
   </div>
 
