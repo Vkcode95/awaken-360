@@ -1,50 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>School | Awaken 360</title>
-
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCH0wmpO_38NcLO2r_7nqUI-JxiEAi-W1c",
-  authDomain: "awaken-360.firebaseapp.com",
-  projectId: "awaken-360",
-  storageBucket: "awaken-360.firebasestorage.app",
-  messagingSenderId: "1026505283790",
-  appId: "1:1026505283790:web:1f35bfcd845db8b262d89f"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-let loggedIn = false;
-onAuthStateChanged(auth, user => loggedIn = !!user);
-
-window.openReg = () => {
-  loggedIn ? alert("Registered content – Updating soon 🚀") : location.href="login.html";
-};
-</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>School Learning | Awaken 360</title>
 
 <style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#0d47a1,#1a237e);color:#fff;padding:16px}
-h2{text-align:center}
-.btn{padding:14px;border-radius:12px;border:none;font-weight:bold;background:#ff9800;margin-bottom:12px;width:100%}
-.lock{background:#ffa726}
-.back{background:transparent;border:2px solid #fff}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: #222;
+  }
+
+  /* Header */
+  header {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  header h2 {
+    margin: 0;
+    color: #1a237e;
+  }
+
+  header button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #1a237e;
+    background: transparent;
+    color: #1a237e;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 32px 16px;
+    text-align: center;
+    background: linear-gradient(135deg, #0d47a1, #1a237e);
+    color: white;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.95;
+  }
+
+  /* Content cards */
+  .container {
+    padding: 24px 16px;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  .card {
+    border: 1px solid #e0e0e0;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    margin-top: 0;
+    color: #1a237e;
+  }
+
+  .card p {
+    margin: 8px 0 16px;
+    color: #444;
+  }
+
+  .card button {
+    padding: 12px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #ff9800;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  /* Back button */
+  .back {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  .back button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    border: 1px solid #1a237e;
+    background: transparent;
+    color: #1a237e;
+    font-weight: bold;
+    cursor: pointer;
+  }
 </style>
+
+<script>
+  function goLogin() {
+    window.location.href = "login.html";
+  }
+
+  function updatingSoon() {
+    alert("Updating soon 🚀");
+  }
+</script>
 </head>
 
 <body>
-<h2>School</h2>
 
-<button class="btn" onclick="alert('Kerala State – Updating soon')">Kerala State</button>
-<button class="btn lock" onclick="openReg()">CBSE 🔒</button>
-<button class="btn lock" onclick="openReg()">ICSE 🔒</button>
+<!-- HEADER -->
+<header>
+  <h2>Awaken 360</h2>
+  <button onclick="goLogin()">Login / Sign up</button>
+</header>
 
-<button class="btn back" onclick="location.href='index.html'">⬅ Back to Home</button>
+<!-- HERO -->
+<section class="hero">
+  <h1>School Learning Programs</h1>
+  <p>Access Videos with the Awaken 360 App</p>
+</section>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <div class="card">
+    <h3>Kerala State Syllabus</h3>
+    <p>
+      Concept-based learning videos designed as per Kerala State curriculum.
+      Simple explanations to help students understand clearly.
+    </p>
+    <button onclick="updatingSoon()">Explore</button>
+  </div>
+
+  <div class="card">
+    <h3>CBSE</h3>
+    <p>
+      Structured video lessons aligned with CBSE syllabus.
+      Learn fundamentals step-by-step with visual explanations.
+    </p>
+    <button onclick="updatingSoon()">Explore</button>
+  </div>
+
+  <div class="card">
+    <h3>ICSE</h3>
+    <p>
+      Detailed learning approach focusing on concepts and application.
+      Designed to support ICSE students effectively.
+    </p>
+    <button onclick="updatingSoon()">Explore</button>
+  </div>
+
+</div>
+
+<!-- BACK -->
+<div class="back">
+  <button onclick="window.location.href='index.html'">⬅ Back to Home</button>
+</div>
+
 </body>
-</html>
+  </html>
