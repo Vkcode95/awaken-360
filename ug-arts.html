@@ -1,50 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>UG Arts | Awaken 360</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{font-family:Arial;background:#f5f7fb;margin:0}
-h2{background:#673ab7;color:#fff;padding:16px}
-.section{padding:16px}
-ul{padding-left:20px}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f7fb;
+}
+header{
+  background:#1a237e;
+  color:#fff;
+  padding:16px;
+  text-align:center;
+}
+.container{
+  padding:16px;
+}
+.main-btn{
+  width:100%;
+  padding:16px;
+  margin-bottom:12px;
+  border:none;
+  border-radius:14px;
+  background:#ffffff;
+  font-size:16px;
+  font-weight:bold;
+  text-align:left;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+.sub{
+  margin-left:12px;
+  margin-top:8px;
+}
+.sub button{
+  width:100%;
+  padding:12px;
+  margin-bottom:8px;
+  border:none;
+  border-radius:10px;
+  background:#eef1ff;
+  text-align:left;
+}
+.hidden{display:none}
 </style>
+
+<script>
+function toggle(id){
+  const el=document.getElementById(id);
+  el.style.display = el.style.display==="none" ? "block" : "none";
+}
+function go(course){
+  alert(course + " – Course page (to be linked)");
+}
+</script>
 </head>
+
 <body>
 
-<h2>UG → Arts</h2>
+<header>
+  <h2>UG → Arts</h2>
+  <p>Select a category</p>
+</header>
 
-<div class="section">
-<h3>Core Arts & Humanities</h3>
-<ul>
-<li>BA English</li><li>BA Hindi</li><li>BA Malayalam</li><li>BA Tamil</li>
-<li>BA Sanskrit</li><li>BA History</li><li>BA Geography</li>
-<li>BA Philosophy</li><li>BA Political Science</li>
-<li>BA Sociology</li><li>BA Psychology</li>
-<li>BA Economics</li><li>BA Public Administration</li>
-</ul>
+<div class="container">
 
-<h3>Fine Arts & Performing Arts</h3>
-<ul>
-<li>BA Fine Arts</li><li>BA Visual Arts</li><li>BA Painting</li>
-<li>BA Sculpture</li><li>BA Applied Arts</li>
-<li>BA Music</li><li>BA Dance</li><li>BA Theatre / Drama</li>
-</ul>
-
-<h3>Social & Cultural Studies</h3>
-<ul>
-<li>BA Anthropology</li><li>BSW</li>
-<li>BA Rural Development</li><li>BA Women Studies</li>
-<li>BA Human Rights</li>
-</ul>
-
-<h3>Languages</h3>
-<ul>
-<li>BA Arabic</li><li>BA Urdu</li><li>BA French</li>
-<li>BA German</li><li>BA Spanish</li>
-<li>BA Chinese</li><li>BA Japanese</li>
-</ul>
+<!-- Core Arts -->
+<button class="main-btn" onclick="toggle('core')">
+📚 Core Arts & Humanities
+</button>
+<div id="core" class="sub hidden">
+  <button onclick="go('BA English')">BA English</button>
+  <button onclick="go('BA Hindi')">BA Hindi</button>
+  <button onclick="go('BA Malayalam')">BA Malayalam</button>
+  <button onclick="go('BA Tamil')">BA Tamil</button>
+  <button onclick="go('BA Sanskrit')">BA Sanskrit</button>
+  <button onclick="go('BA History')">BA History</button>
+  <button onclick="go('BA Geography')">BA Geography</button>
+  <button onclick="go('BA Philosophy')">BA Philosophy</button>
+  <button onclick="go('BA Political Science')">BA Political Science</button>
+  <button onclick="go('BA Sociology')">BA Sociology</button>
+  <button onclick="go('BA Psychology')">BA Psychology</button>
+  <button onclick="go('BA Economics')">BA Economics</button>
+  <button onclick="go('BA Public Administration')">BA Public Administration</button>
 </div>
 
+<!-- Fine Arts -->
+<button class="main-btn" onclick="toggle('fine')">
+🎨 Fine Arts & Performing Arts
+</button>
+<div id="fine" class="sub hidden">
+  <button onclick="go('BA Fine Arts')">BA Fine Arts</button>
+  <button onclick="go('BA Visual Arts')">BA Visual Arts</button>
+  <button onclick="go('BA Painting')">BA Painting</button>
+  <button onclick="go('BA Sculpture')">BA Sculpture</button>
+  <button onclick="go('BA Applied Arts')">BA Applied Arts</button>
+  <button onclick="go('BA Music')">BA Music (Vocal / Instrumental)</button>
+  <button onclick="go('BA Dance')">BA Dance</button>
+  <button onclick="go('BA Theatre')">BA Theatre / Drama</button>
+</div>
+
+<!-- Social Studies -->
+<button class="main-btn" onclick="toggle('social')">
+🌍 Social & Cultural Studies
+</button>
+<div id="social" class="sub hidden">
+  <button onclick="go('BA Anthropology')">BA Anthropology</button>
+  <button onclick="go('BSW')">Bachelor of Social Work (BSW)</button>
+  <button onclick="go('BA Rural Development')">BA Rural Development</button>
+  <button onclick="go('BA Women Studies')">BA Women Studies</button>
+  <button onclick="go('BA Human Rights')">BA Human Rights</button>
+</div>
+
+<!-- Languages -->
+<button class="main-btn" onclick="toggle('lang')">
+🌐 Languages (Specialised)
+</button>
+<div id="lang" class="sub hidden">
+  <button onclick="go('BA Arabic')">BA Arabic</button>
+  <button onclick="go('BA Urdu')">BA Urdu</button>
+  <button onclick="go('BA French')">BA French</button>
+  <button onclick="go('BA German')">BA German</button>
+  <button onclick="go('BA Spanish')">BA Spanish</button>
+  <button onclick="go('BA Chinese')">BA Chinese</button>
+  <button onclick="go('BA Japanese')">BA Japanese</button>
+</div>
+
+</div>
 </body>
-</html>
+  </html>
