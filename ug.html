@@ -1,26 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>UG | Awaken 360</title>
-<style>
-body{margin:0;font-family:Arial;background:linear-gradient(135deg,#0d47a1,#1a237e);color:#fff;padding:16px}
-h2{text-align:center}
-.btn{padding:14px;border-radius:12px;border:none;font-weight:bold;background:#ff9800;margin-bottom:12px;width:100%}
-.back{background:transparent;border:2px solid #fff}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UG Programmes | Awaken 360</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+    }
+
+    header {
+      background: #1a237e;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background: #eef1ff;
+    }
+  </style>
 </head>
 
 <body>
-<h2>UG</h2>
 
-<button class="btn">Arts</button>
-<button class="btn">Science</button>
-<button class="btn">Commerce</button>
-<button class="btn">Engineering</button>
-<button class="btn">Medicine</button>
+<header>
+  <h2>Undergraduate Programmes (UG)</h2>
+  <p>Select your stream</p>
+</header>
 
-<button class="btn back" onclick="location.href='index.html'">⬅ Back to Home</button>
+<div class="container">
+  <div class="grid">
+    <div class="card" onclick="location.href='ug-arts.html'">Arts</div>
+    <div class="card" onclick="location.href='ug-science.html'">Science</div>
+    <div class="card" onclick="location.href='ug-commerce.html'">Commerce</div>
+    <div class="card" onclick="location.href='ug-engineering.html'">Engineering</div>
+    <div class="card" onclick="location.href='ug-medicine.html'">Medicine</div>
+  </div>
+</div>
+
 </body>
 </html>
