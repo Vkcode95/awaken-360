@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>School | Awaken 360</title>
 
 <style>
@@ -10,29 +10,28 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f6fb;
-  color: #222;
 }
 
-/* Notification banner */
+/* Top notification banner */
 .banner {
   background: #1a237e;
-  color: #fff;
+  color: white;
   padding: 10px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 14px;
 }
 
 /* Slide container */
-.slide-container {
+.container {
   padding: 16px;
 }
 
 .slide {
-  background: #ffffff;
+  background: white;
   border-radius: 14px;
   padding: 20px;
   margin-bottom: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
 }
 
 .slide h3 {
@@ -40,77 +39,24 @@ body {
   color: #1a237e;
 }
 
+/* Select box styling */
 .select-box {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
-.select-box button {
+select {
   width: 100%;
   padding: 14px;
   border-radius: 10px;
-  border: none;
-  background: #ff9800;
-  font-weight: bold;
-}
-
-/* Options */
-.options {
-  margin-top: 10px;
-}
-
-.options button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background: #f9f9f9;
-}
-
-/* Family registration */
-.family-box {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 20px;
-  margin: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.family-box h3 {
-  margin-top: 0;
-  color: #1a237e;
-}
-
-.family-box input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.family-box button {
-  margin-top: 14px;
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  background: #1a237e;
-  color: #fff;
-  font-weight: bold;
+  border: 2px solid #ddd;
+  font-size: 16px;
+  background: #fff;
 }
 </style>
 
 <script>
-let step = 1;
-
-function showOptions(id) {
+function showNext(id) {
   document.getElementById(id).style.display = "block";
-}
-
-function nextStep() {
-  step++;
-  document.getElementById("slide" + step).style.display = "block";
 }
 
 function goToStudentHome() {
@@ -121,37 +67,43 @@ function goToStudentHome() {
 
 <body>
 
-<!-- Notification Banner -->
+<!-- Banner -->
 <div class="banner">
-  📢 New updates available | Offers | Announcements
+  🔔 Notifications • Offers • Updates
 </div>
 
-<div class="slide-container">
+<div class="container">
 
   <!-- SLIDE 1 -->
-  <div class="slide" id="slide1">
+  <div class="slide">
     <h3>Select the country where the school is located</h3>
     <div class="select-box">
-      <button onclick="showOptions('countryOptions')">Select</button>
-    </div>
-    <div class="options" id="countryOptions" style="display:none">
-      <button onclick="nextStep()">India</button>
-      <button>Other Country</button>
+      <select onchange="showNext('slide2')">
+        <option selected disabled>Select</option>
+        <option>India</option>
+        <option>UAE</option>
+        <option>Germany</option>
+        <option>United Kingdom</option>
+        <option>Russia</option>
+        <option>China</option>
+      </select>
     </div>
   </div>
 
   <!-- SLIDE 2 -->
   <div class="slide" id="slide2" style="display:none">
-    <h3>Select the state where the school is located</h3>
+    <h3>State in which school is located</h3>
     <div class="select-box">
-      <button onclick="showOptions('stateOptions')">Select</button>
-    </div>
-    <div class="options" id="stateOptions" style="display:none">
-      <button onclick="nextStep()">Kerala</button>
-      <button>Tamil Nadu</button>
-      <button>Karnataka</button>
-      <button>Maharashtra</button>
-      <!-- (Add remaining states later) -->
+      <select onchange="showNext('slide3')">
+        <option selected disabled>Select</option>
+        <option>Kerala</option>
+        <option>Tamil Nadu</option>
+        <option>Karnataka</option>
+        <option>Maharashtra</option>
+        <option>Delhi</option>
+        <option>Uttar Pradesh</option>
+        <!-- Add remaining states later -->
+      </select>
     </div>
   </div>
 
@@ -159,12 +111,12 @@ function goToStudentHome() {
   <div class="slide" id="slide3" style="display:none">
     <h3>Select your academic syllabus</h3>
     <div class="select-box">
-      <button onclick="showOptions('syllabusOptions')">Select</button>
-    </div>
-    <div class="options" id="syllabusOptions" style="display:none">
-      <button onclick="nextStep()">CBSE</button>
-      <button onclick="nextStep()">ICSE</button>
-      <button onclick="nextStep()">Kerala State Syllabus</button>
+      <select onchange="showNext('slide4')">
+        <option selected disabled>Select</option>
+        <option>CBSE</option>
+        <option>ICSE</option>
+        <option>Kerala State Syllabus</option>
+      </select>
     </div>
   </div>
 
@@ -172,41 +124,27 @@ function goToStudentHome() {
   <div class="slide" id="slide4" style="display:none">
     <h3>Grade in which the student is studying</h3>
     <div class="select-box">
-      <button onclick="showOptions('gradeOptions')">Select</button>
-    </div>
-    <div class="options" id="gradeOptions" style="display:none">
-      <button onclick="goToStudentHome()">LKG</button>
-      <button onclick="goToStudentHome()">UKG</button>
-      <button onclick="goToStudentHome()">Class 1</button>
-      <button onclick="goToStudentHome()">Class 2</button>
-      <button onclick="goToStudentHome()">Class 3</button>
-      <button onclick="goToStudentHome()">Class 4</button>
-      <button onclick="goToStudentHome()">Class 5</button>
-      <button onclick="goToStudentHome()">Class 6</button>
-      <button onclick="goToStudentHome()">Class 7</button>
-      <button onclick="goToStudentHome()">Class 8</button>
-      <button onclick="goToStudentHome()">Class 9</button>
-      <button onclick="goToStudentHome()">Class 10</button>
-      <button onclick="goToStudentHome()">Plus One</button>
-      <button onclick="goToStudentHome()">Plus Two</button>
+      <select onchange="goToStudentHome()">
+        <option selected disabled>Select</option>
+        <option>LKG</option>
+        <option>UKG</option>
+        <option>Class 1</option>
+        <option>Class 2</option>
+        <option>Class 3</option>
+        <option>Class 4</option>
+        <option>Class 5</option>
+        <option>Class 6</option>
+        <option>Class 7</option>
+        <option>Class 8</option>
+        <option>Class 9</option>
+        <option>Class 10</option>
+        <option>Plus One</option>
+        <option>Plus Two</option>
+      </select>
     </div>
   </div>
 
 </div>
 
-<!-- Family Registration (for non-registered only – logic added later) -->
-<div class="family-box">
-  <h3>Register as a Family Member</h3>
-
-  <input placeholder="Student Name" />
-  <input placeholder="Parent Name" />
-  <input placeholder="Contact Details" />
-  <input placeholder="School Name" />
-  <input placeholder="School Address" />
-  <input placeholder="Email ID" />
-
-  <button>Register</button>
-</div>
-
 </body>
-      </html>
+</html>
